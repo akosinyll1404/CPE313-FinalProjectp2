@@ -32,7 +32,7 @@ input_type = st.radio("Select input type:", ("Image", "Video"))
 if input_type == "Image":
     uploaded_img = st.file_uploader("Upload an image of your office space", type=["jpg", "jpeg", "png"])
     if uploaded_img:
-        image = Image.open(uploaded_img).convert("BGR")
+        image = Image.open(uploaded_img).convert("RGB")
         st.image(image, caption="Image is uploaded!", use_container_width=True)
 
         with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
